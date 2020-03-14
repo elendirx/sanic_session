@@ -133,7 +133,7 @@ class BaseSessionInterface(metaclass=abc.ABCMeta):
         Returns:
             None
         """
-        if "session" not in request:
+        if "session" not in request.ctx:
             return
 
         key = self.prefix + request.ctx[self.session_name].sid
